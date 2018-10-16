@@ -11,5 +11,5 @@ const devToolsRedux = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVT
 const store = createStore(reducer, devToolsRedux);
 console.log(store.getState());
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
 registerServiceWorker();
