@@ -10,7 +10,9 @@ import { Provider } from 'react-redux';
 const devToolsRedux = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(reducer, devToolsRedux);
-console.log(store.getState());
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>, document.getElementById('root'));
 registerServiceWorker();
